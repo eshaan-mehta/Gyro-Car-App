@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
-import { Button, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Button, NativeEventEmitter, NativeModules, Pressable, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 import { Gyroscope, GyroscopeMeasurement, Accelerometer, AccelerometerMeasurement } from "expo-sensors";
 import BleManager from "react-native-ble-manager";
+
+// const BleManagerEmitter = new NativeEventEmitter(NativeModules.BleManager);
 
 export default function Index() {
   const [gyroData, setGyroData] = useState<GyroscopeMeasurement | null>(null);
@@ -24,6 +26,23 @@ export default function Index() {
     setGyroData(null);
     setAccelData(null);
   };
+
+  const handleDiscoverPeripheral = (peripheral) => {
+    console.log('Found peripheral:', peripheral);
+  };
+
+  // useEffect(() => {
+  //   BleManager.start({showAlert: false})
+  //   const BluetoothSubscription = BleManagerEmitter.addListener(
+  //     'BleManagerDiscoverPeripheral', 
+  //     handleDiscoverPeripheral
+  //   );
+  
+  //   // on umount
+  //   return () => {
+  //     BluetoothSubscription.remove();
+  //   }
+  // }, []);
 
   useEffect(() => {
     Gyroscope.setUpdateInterval(100);
@@ -90,7 +109,7 @@ export default function Index() {
         }
       </View>
       <View>
-        <TouchableOpacity 
+        <Pressable 
           style={{
             backgroundColor: "blue",
             padding: 10,
@@ -103,7 +122,7 @@ export default function Index() {
           onPressOut={_unsubscribe}
         >
           <Text style={{color: 'white'}}>Start</Text>
-        </TouchableOpacity>
+        </Pressable>
       </View>
     </View>
   );
