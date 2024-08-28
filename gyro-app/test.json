@@ -1,0 +1,72 @@
+{
+    "name": "My Search",
+    "from": "2024-08-01T09:45",
+    "to": "2024-08-12T09:45",
+    "status": 0,
+    "featureArchiveMatchId": 66,
+    "researchJobNodes": 
+    [
+        {
+            "nodeId": 19106,
+            "name": "Dell-Laptop-Dale",
+            "lastContact": "2024-06-07T15:13:55.726033",
+            "profile": "Store",
+            "nodeVersion": "Store-1.0.9",
+            "enabled": true,
+            "targetPackageVersion": "Store-1.0.12",
+            "tagValues": 
+            [
+            ],
+            "checked": true
+        },
+        {
+            "nodeId": 19107,
+            "name": "JIMPC3",
+            "lastContact": "2024-07-26T00:36:09.507467",
+            "profile": "Store",
+            "nodeVersion": "Store-1.0.12",
+            "enabled": true,
+            "targetPackageVersion": "Store-1.0.12",
+            "tagValues": 
+            [
+            ],
+            "checked": true
+        }
+    ],
+    "match": 
+    {
+        "archiveId": 5015,
+        "observationId": 10009,
+        "propertyId": null,
+        "description": "Pin Pad Not Responding",
+        "enabled": true,
+        "name": "Pin Pad Error 61008",
+        "expressionDefinitionId": 66,
+        "pattern": "/\"ResponseCode\":\"61008\"/",
+        "metaData": "{\"head\": {\"name\": \"string\", \"next\": null, \"value\": \"\\\"ResponseCode\\\":\\\"61008\\\"\", \"ess_cn\": \"RIExpressionString\"}, \"size\": 1, \"ess_cn\": \"RIExpressionList\"}",
+        "observationDefinition": 
+        {
+            "observationId": 10009,
+            "featureId": 5003,
+            "archiveId": 5015,
+            "name": "Pin Pad Error 61008",
+            "description": "",
+            "observationLimit": null,
+            "attributeDefinitions": 
+            [
+                {
+                    "attributeId": 21,
+                    "observationId": 10009,
+                    "valueExpressionDefinitionId": 29,
+                    "name": "Register ID",
+                    "description": "Register ID Error Occurs ON",
+                    "pattern": "/(?<value>)\"POSID\":\"14\"/",
+                    "metaData": "{\"head\": {\"name\": \"value\", \"next\": {\"name\": \"string\", \"next\": null, \"value\": \"\\\"POSID\\\":\\\"14\\\"\", \"ess_cn\": \"RIExpressionString\"}, \"ess_cn\": \"RIExpressionNamedCapture\", \"expressions\": {\"head\": null, \"size\": 0, \"ess_cn\": \"RIExpressionList\"}}, \"size\": 2, \"ess_cn\": \"RIExpressionList\"}",
+                    "required": false,
+                    "dataType": 0
+                }
+            ]
+        },
+        "propertyDefinition": null
+    }
+}
